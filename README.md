@@ -1,4 +1,4 @@
-# TEnmo
+# Tenmo
 
 ## User Stories
 
