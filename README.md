@@ -1,27 +1,11 @@
-# Module 2 Capstone - TEnmo
+TEnmo
 
-Congratulations—you've landed a job with TEnmo, whose product is an online payment service for transferring "TE bucks" between friends. However, they don't have a product yet. Parts of the project have been started, you have been tasked with completing the remaining features using the partial RESTful API server and command-line application given.
+## User Stories
 
-**Review Franks Comments for the Module 2 Capstone document**
-
-**The required use case code for the client side has already been completed.  There is nothing for your do in it.**
-
-**You will be working on the server side only implementing the data access and server side APIs**
-
-**Use Postman to test your server side code**
-
-**You may run the client to test your server side code ***AFTER*** you have verified it is correct using Postman**
-
-## Use cases
-
-### Required use cases
-
-You should attempt to complete all of the following required use cases.
-
-1. **[COMPLETE]** As a user of the system, I need to be able to register myself with a username and password.
+1. As a user of the system, I need to be able to register myself with a username and password.
    1. A new registered user starts with an initial balance of 1,000 TE Bucks.
    2. The ability to register has been provided in your starter code.
-2. **[COMPLETE]** As a user of the system, I need to be able to log in using my registered username & password.
+2. As a user of the system, I need to be able to log in using my registered username & password.
    1. Logging in returns an Authentication Token. I need to include this token with all my subsequent interactions with the system outside of registering and logging in.
    2. The ability to log in has been provided in your starter code.
 3. As an authenticated user of the system, I need to be able to see my Account Balance.
@@ -36,11 +20,6 @@ You should attempt to complete all of the following required use cases.
    8. A Sending Transfer has an initial status of *Approved*.
 5. As an authenticated user of the system, I need to be able to see transfers I have sent or received.
 6. As an authenticated user of the system, I need to be able to retrieve the details of any transfer based upon the transfer ID.
-
-### **Optional use cases - Not included in tenmo-client - you must write both server and client code for these**
-
-If you complete all of the required use cases and are looking for additional challenge, complete as many of the following optional use cases as you can.
-
 7. As an authenticated user of the system, I need to be able to *request* a transfer of a specific amount of TE Bucks from another registered user.
    1. I should be able to choose from a list of users to request TE Bucks from.
    2. I must not be allowed to request money from myself.
@@ -58,8 +37,6 @@ If you complete all of the required use cases and are looking for additional cha
    5. If the transfer is rejected, no account balance changes.
 
 ## Sample screens 
-
-Feel free to customize, but information displayed and user interction must be similar
 
 ### Use case 3: Current balance
 ```
@@ -253,16 +230,6 @@ public class JdbcUserDao implements UserDao {
 
 ## Testing
 
-
-### DAO integration tests
-
-`com.techelevator.dao.BaseDaoTests` has been provided for you to use as a base class for any DAO integration test. It initializes a Datasource for testing and manages rollback of database changes between tests.
-
-`com.techelevator.dao.JdbUserDaoTests` has been provided for you as an example for writing your own DAO integration tests.
-
-Remember that when testing, you're using a copy of the real database. The schema and data for the test database are defined in `/src/test/resources/test-data.sql`. The schema in this file matches the schema defined in `database/tenmo.sql`.
-
-
 ## Authentication / Finding a Logged In User Information
 
 The user registration and authentication functionality for the system has already been implemented. If you review the login code, you'll notice that after successful authentication, an instance of `AuthenticatedUser` is stored in the `currentUser` member variable of `App`. The user's authorization token—meaning JWT—can be accessed from `App` as `currentUser.getToken()`.
@@ -317,17 +284,4 @@ Review the code given in the client-side `ConsoleService`, `displayAnAccount()` 
   	                          },
 	      "amount": "12345.67"
       }
-     ``` 
-
-1. Review the `Module-2 Capstone Design.pdf` and be sure you understand the overall design of the system as well as the purpose of each component and what they interact with.
-
-   Also be sure you understand the project structure of the client-side and server-side projects provided and the purpose/use of each folder, package and class given in each project.   
-
-2. Review all the code given related to the Tenmo Application in the client packages (`model`, `ConsoleService`, `TenmoService`) and the `App` class.  Code in these may be used a model for new features you will be implmenting.
-3.  Use IntelliJ to find the `TODO`s in the client code `TenmoService`.  It will help you focus on what to do next. If you don't know how to do this, ask your instructor for assistance. Note: Although the `TODO`s are in the client code `TenmoService`, some of them may require coding on the serer-side as well.
-4.  Review all the code given related to the Tenmo Applicationand in the server packages (`controller.TenmoContoller`, `datasource`). Code in these may be used a model for new features you will be implmenting. 
-5.  Remember:  **Analyze**, **Design**, **Code**, **Refactor**
-6.  Follow the ***Happy Path*** first. Don't worry about edge cases until your ***Happy Path***s are done.
-7.  ***Don't overthink the problem***.  If you have designed a viable solution, code and test it before you decide it's wrong or needs tweaking. That's what **Refactor** is for. It is much easier to debug code that is written than trying to debug code as you write it.
-    
-### Smile when you code!
+     ```    
